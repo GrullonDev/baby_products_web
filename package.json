@@ -7,7 +7,7 @@
     "start": "live-server src",
     "build": "echo 'Construcción del proyecto'"
   },
-  "author": "Tu Nombre",
+  "author": "GrullonDev",
   "license": "MIT",
   "dependencies": {
     "live-server": "^1.2.1"
