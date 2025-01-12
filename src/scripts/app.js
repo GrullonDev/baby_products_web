@@ -12,8 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const productContainer = document.getElementById('product-list');
     const productListContainer = document.querySelector('.product-list');
     const cartCount = document.getElementById('cart-count');
-    let cartItems = 0;
+    const cartDropdown = document.querySelector('.cart-dropdown');
 
+    let cartItems = [];
+
+    // Generar dinámicamente los productos en la página
     products.forEach(product => {
         const productCard = document.createElement('li');
         productCard.classList.add('product-card');
@@ -31,15 +34,42 @@ document.addEventListener('DOMContentLoaded', () => {
         productListContainer.appendChild(productCardClone);
     });
 
+    // Manejar la acción de comprar productos
     const buyButtons = document.querySelectorAll('.buy-button');
-    buyButtons.forEach(button => {
+    buyButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
-            cartItems++;
-            cartCount.textContent = cartItems;
-            alert(`Producto añadido al carrito. Total en el carrito: ${cartItems}`);
+            const selectedProduct = products[index];
+            const existingProduct = cartItems.find(item => item.name === selectedProduct.name);
+
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cartItems.push({ ...selectedProduct, quantity: 1 });
+            }
+
+            updateCart();
+            alert(`Producto añadido al carrito: ${selectedProduct.name}`);
         });
     });
 
+    // Actualizar el contenido del carrito
+    function updateCart() {
+        cartCount.textContent = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+        if (cartItems.length > 0) {
+            cartDropdown.innerHTML = cartItems.map(item => `
+                <div class="cart-item">
+                    <p>${item.name} - ${item.quantity} x $${item.price}</p>
+                </div>
+            `).join('') + `<div class="cart-total">
+                <strong>Total: $${cartItems.reduce((total, item) => total + item.price * item.quantity, 0)}</strong>
+            </div>`;
+        } else {
+            cartDropdown.innerHTML = `<p>Tu carrito de compras está vacío!</p>`;
+        }
+    }
+
+    // Control del slider del carrusel
     const track = document.querySelector('.carousel-track');
     const prevButton = document.querySelector('.carousel-button.prev');
     const nextButton = document.querySelector('.carousel-button.next');
@@ -64,4 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         track.style.transform = `translateX(-${currentIndex * (100 / itemsToShow)}%)`;
     });
+
+    // Mostrar y ocultar el carrito al pasar el mouse (opcional)
+    const cartElement = document.querySelector('.cart');
+    cartElement.addEventListener('mouseenter', () => {
+        cartDropdown.style.display = 'block';
+    });
+
+    cartElement.addEventListener('mouseleave', () => {
+        cartDropdown.style.display = 'none';
+    });
+
+    // Inicializar el contenido del carrito
+    updateCart();
 });
