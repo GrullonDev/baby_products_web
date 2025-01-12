@@ -1,0 +1,22 @@
+{
+  "name": "baby-products-promo",
+  "version": "1.0.0",
+  "description": "Página web para promocionar productos de bebé.",
+  "main": "src/scripts/app.js",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Construcción del proyecto'"
+  },
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "bebé",
+    "productos",
+    "promoción",
+    "ecommerce"
+  ]
+}
