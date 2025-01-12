@@ -51,29 +51,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-.cart {
-    position: relative;
-}
-
-.cart-dropdown {
-    position: absolute;
-    top: 35px;
-    right: 0;
-    width: 200px;
-    background-color: white;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    display: none;
-    z-index: 1000;
-    text-align: center;
-    border-radius: 5px;
-}
-
-.cart:hover .cart-dropdown {
-    display: block;
-}
-
 nav ul li.cart {
     position: absolute;
     right: 20px;
@@ -281,6 +258,154 @@ footer {
 
 footer p {
     margin: 5px 0;
+}
+
+.cart-dropdown {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: none;
+    z-index: 1000;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Mostrar el carrito de forma fija cuando esté activo */
+.cart-dropdown.active {
+    display: block;
+    /* Forzar que sea visible */
+}
+
+/* Fondo oscuro al activarse el carrito */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+    /* Hacer visible el fondo */
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cart-item img.cart-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.cart-item p {
+    margin: 0;
+    flex: 1;
+}
+
+.cart-item input.cart-item-quantity {
+    width: 50px;
+    margin: 0 10px;
+}
+
+.cart-total {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.cart-dropdown .pay-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #232f3e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-dropdown .pay-button:hover {
+    background-color: #131a22;
+}
+
+.dialog {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.dialog-content .close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.dialog-content .close-button:hover,
+.dialog-content .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dialog-content .form-group {
+    margin-bottom: 15px;
+}
+
+.dialog-content .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dialog-content .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.dialog-content button {
+    padding: 10px 20px;
+    background-color: #232f3e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dialog-content button:hover {
+    background-color: #131a22;
 }
 
 .product-list {

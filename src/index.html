@@ -18,12 +18,15 @@
                 <li><a href="#informacion-negocio">Información del Negocio</a></li>
                 <li><a href="#contacto">Contacto</a></li>
                 <li class="cart">
-                    <a href="#carrito">
+                    <a id="cart-icon">
                         <img src="assets/images/cart-icon.png" alt="Carrito de Compras">
                         <span id="cart-count">0</span>
                     </a>
-                    <div class="cart-dropdown">
-                        <p>Tu carrito de compras está vacío!</p>
+                    <div class="cart-dropdown" id="cart-dropdown">
+                        <div id="cart-content">
+                            <p>Tu carrito de compras está vacío!</p>
+                        </div>
+                        <button id="close-cart" class="close-cart-button">Cerrar</button>
                     </div>
                 </li>
             </ul>
@@ -64,11 +67,32 @@
             </div>
         </section>
         <section id="productos-listado">
-            <h2>Productos Nuevos</h2>
+            <h2>Listado de Productos</h2>
             <div class="product-list">
                 <!-- Los productos se agregarán dinámicamente aquí -->
             </div>
         </section>
+        <div id="payment-dialog" class="dialog">
+            <div class="dialog-content">
+                <span class="close-button">&times;</span>
+                <h2>Proceso de Pago</h2>
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="card-number">Número de Tarjeta:</label>
+                        <input type="text" id="card-number" name="card-number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-expiry">Fecha de Expiración:</label>
+                        <input type="text" id="card-expiry" name="card-expiry" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-cvc">CVC:</label>
+                        <input type="text" id="card-cvc" name="card-cvc" required>
+                    </div>
+                    <button type="submit">Pagar</button>
+                </form>
+            </div>
+        </div>
         <section id="contacto">
             <h2>Contacto</h2>
             <form class="contact-form">
