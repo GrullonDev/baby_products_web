@@ -1,143 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Productos de Bebé</title>
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
     <header>
-        <div class="header-top">
-            <h1>Bienvenidos a nuestra tienda de productos para bebés</h1>
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#categorias">Categorías</a></li>
-                <li><a href="#informacion-negocio">Información del Negocio</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li class="cart">
-                    <a id="cart-icon">
-                        <img src="assets/images/cart-icon.png" alt="Carrito de Compras">
-                        <span id="cart-count">0</span>
-                    </a>
-                    <div class="cart-dropdown" id="cart-dropdown">
-                        <div id="cart-content">
-                            <p>Tu carrito de compras está vacío!</p>
-                        </div>
-                        <button id="close-cart" class="close-cart-button">Cerrar</button>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+      <div class="header-top">
+        <h1>Tienda de Bebés</h1>
+        <p>Los mejores productos para el cuidado de tu bebé</p>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#categorias">Categorías</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li class="cart">
+            <a id="cart-icon">
+              <img src="assets/images/cart-icon.png" alt="Carrito" />
+              <span id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <section id="productos">
-            <h2>Productos Destacados</h2>
-            <div class="carousel">
-                <button class="carousel-button prev">‹</button>
-                <div class="carousel-track-container">
-                    <ul class="carousel-track" id="product-list">
-                        <!-- Los productos se agregarán dinámicamente aquí -->
-                    </ul>
-                </div>
-                <button class="carousel-button next">›</button>
-            </div>
-        </section>
-        <section id="categorias">
-            <h2>Categorías</h2>
-            <div class="categories">
-                <div class="category">
-                    <img src="assets/images/diapers.jpg" alt="Pañales">
-                    <h3>Pañales</h3>
-                </div>
-                <div class="category">
-                    <img src="assets/images/bottle.jpg" alt="Biberones">
-                    <h3>Biberones</h3>
-                </div>
-                <div class="category">
-                    <img src="assets/images/pacifier.jpg" alt="Chupetes">
-                    <h3>Chupetes</h3>
-                </div>
-                <div class="category">
-                    <img src="assets/images/stroller.jpg" alt="Cochecitos">
-                    <h3>Cochecitos</h3>
-                </div>
-            </div>
-        </section>
-        <section id="productos-listado">
-            <h2>Listado de Productos</h2>
-            <div class="product-list">
-                <!-- Los productos se agregarán dinámicamente aquí -->
-            </div>
-        </section>
-        <div id="payment-dialog" class="dialog">
-            <div class="dialog-content">
-                <span class="close-button">&times;</span>
-                <h2>Proceso de Pago</h2>
-                <form id="payment-form">
-                    <div class="form-group">
-                        <label for="card-number">Número de Tarjeta:</label>
-                        <input type="text" id="card-number" name="card-number" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="card-expiry">Fecha de Expiración:</label>
-                        <input type="text" id="card-expiry" name="card-expiry" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="card-cvc">CVC:</label>
-                        <input type="text" id="card-cvc" name="card-cvc" required>
-                    </div>
-                    <button type="submit">Pagar</button>
-                </form>
-            </div>
+      <section id="productos">
+        <h2>Productos Destacados</h2>
+        <div class="carousel">
+          <button class="carousel-button prev">‹</button>
+          <div class="carousel-track-container">
+            <ul class="carousel-track" id="product-list">
+              <!-- Productos dinámicos -->
+            </ul>
+          </div>
+          <button class="carousel-button next">›</button>
         </div>
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+      </section>
+      <section id="categorias">
+        <h2>Categorías</h2>
+        <div class="categories">
+          <div class="category">
+            <img src="assets/images/diapers.jpg" alt="Colchas" />
+            <h3>Pañales</h3>
+          </div>
+          <div class="category">
+            <img src="assets/images/bottle.jpg" alt="Borregos" />
+            <h3>Biberones</h3>
+          </div>
+          <div class="category">
+            <img src="assets/images/toys.jpg" alt="Pijamas" />
+            <h3>Juguetes</h3>
+          </div>
+        </div>
+      </section>
+
+      <section id="productos-listado">
+        <h2>Listado de Productos</h2>
+        <div class="product-list">
+          <!-- Los productos se agregarán dinámicamente aquí -->
+        </div>
+      </section>
+      <div id="payment-dialog" class="dialog">
+        <div class="dialog-content">
+          <span class="close-button">&times;</span>
+          <h2>Proceso de Pago</h2>
+          <form id="payment-form">
+            <div class="form-group">
+              <label for="card-number">Número de Tarjeta:</label>
+              <input type="text" id="card-number" name="card-number" required />
+            </div>
+            <div class="form-group">
+              <label for="card-expiry">Fecha de Expiración:</label>
+              <input type="text" id="card-expiry" name="card-expiry" required />
+            </div>
+            <div class="form-group">
+              <label for="card-cvc">CVC:</label>
+              <input type="text" id="card-cvc" name="card-cvc" required />
+            </div>
+            <button type="submit">Pagar</button>
+          </form>
+        </div>
+      </div>
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
     </main>
+
     <footer>
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h3>Sobre Nosotros</h3>
-                <p>Somos una tienda dedicada a ofrecer los mejores productos para bebés.</p>
-            </div>
-            <div class="footer-section links">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="#productos">Productos</a></li>
-                    <li><a href="#categorias">Categorías</a></li>
-                    <li><a href="#informacion-negocio">Información del Negocio</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
-            <div class="footer-section contact">
-                <h3>Contacto</h3>
-                <p><strong>Teléfono:</strong> (+502) 5709-0902</p>
-                <p><strong>Email:</strong> contacto@tiendadebebes.com</p>
-            </div>
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h3>Sobre Nosotros</h3>
+          <p>
+            Somos una tienda dedicada a ofrecer los mejores productos para
+            bebés.
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Jorge Luis Grullón Marroquín - Desarrollador FullStack</p>
-            <p>Contacto: prosystem155@gmail.com</p>
+        <div class="footer-section links">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#categorias">Categorías</a></li>
+            <li><a href="#informacion-negocio">Información del Negocio</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
         </div>
+        <div class="footer-section contact">
+          <h3>Contacto</h3>
+          <p><strong>Teléfono:</strong> (+502) 5709-0902</p>
+          <p><strong>Email:</strong> contacto@tiendadebebes.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Jorge Luis Grullón Marroquín - Desarrollador FullStack
+        </p>
+        <p>Contacto: prosystem155@gmail.com</p>
+      </div>
     </footer>
     <script src="scripts/app.js"></script>
-</body>
+  </body>
 </html>
